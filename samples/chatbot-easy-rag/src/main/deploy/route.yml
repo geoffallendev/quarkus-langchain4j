@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: menu-bot
+  labels:
+    app: menu-easy-rag
+    app.kubernetes.io/component: menu-easy-rag
+    app.kubernetes.io/instance: menu-easy-rag
+    app.kubernetes.io/name: menu-easy-rag
+    app.kubernetes.io/part-of: menu-easy-rag-app
+    app.openshift.io/runtime-version: latest
+spec:
+  to:
+    kind: Service
+    name: menu-easy-rag
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  wildcardPolicy: None

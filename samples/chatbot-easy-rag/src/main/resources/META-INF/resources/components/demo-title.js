@@ -28,7 +28,7 @@ export class DemoTitle extends LitElement {
       }
       
       .explanation img {
-        max-width: 60%;
+        max-width: 90%;
         display: block;
         float:left;
         margin-right: 2em;
@@ -39,22 +39,24 @@ export class DemoTitle extends LitElement {
     render() {
         return html`
             <div class="title">
-                <h1>Bank Buddy</h1>
+                <h1>Menu Bot</h1>
             </div>
             <div class="explanation">
                 This demo shows how to build a chat bot powered by GPT 3.5 and retrieval augmented generation.
-                The description of the different accounts is ingested into a Redis database and relevant information
+                
+                The Maggianos menus are ingested into a in-memory vectorDB and relevant information
+                
                 is sent to the LLM before answering the user.
             </div>
             
             <div class="explanation">
-                <img src="images/chatbot-architecture.png"/>
+            <img src="images/llms-big-picture.png"/>
             </div>
             
             <div class="explanation">
                 <ol>
                     <li>The user send a question to the application.</li>
-                    <li>The application looks for relevant data in the Redis store.</li>
+                    <li>The application looks for relevant data in the in-memory store.</li>
                     <li>The relevant data is retrieved and added to the user's question.</li>
                     <li>The extended question is sent to the LLM model.</li>
                     <li>The response is received and sent back to the user.</li>
